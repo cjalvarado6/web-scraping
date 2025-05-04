@@ -5,7 +5,8 @@ This project contains a Python script (`main.py`) for scraping book data from th
 ## Features
 
 - Fetches book data such as title, price, and availability from all pages of the website.
-- Saves the scraped data into a CSV file (`books.csv`).
+- Optionally divides the scraped book data into separate CSV files based on genre.
+- Saves the scraped data into a `data` folder.
 
 ## How to Use
 
@@ -19,8 +20,11 @@ This project contains a Python script (`main.py`) for scraping book data from th
    python main.py
    ```
 
-3. The script will scrape all the books and save the data into a file named `books.csv` in the current directory.
+3. When prompted, choose whether to divide books by genre:
+   - If you select "yes", the script will create separate CSV files for each genre in the `data` folder.
+   - If you select "no", the script will save all books into a single file named `books.csv` in the `data` folder.
 
 ## File Overview
 
 - `main.py`: Contains the logic for fetching, scraping, and saving book data.
+- `data/`: Folder where the scraped CSV files are saved.
