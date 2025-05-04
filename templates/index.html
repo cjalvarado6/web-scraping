@@ -1,0 +1,40 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Scraper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    label, select, input {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scrape Book Data</h1>
+  <form method="POST">
+    <label for="category">Select a category:</label>
+    <select name="category" id="category" required>
+      {% for cat in categories %}
+        <option value="{{ cat }}">{{ cat }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="pages">Number of pages to scrape:</label>
+    <input type="number" name="pages" id="pages" min="1" max="10" value="1" required>
+
+    <button type="submit">Download CSV</button>
+  </form>
+</body>
+</html>
